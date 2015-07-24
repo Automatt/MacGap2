@@ -25,6 +25,9 @@ JSExportAs(resize, - (void) resize: (NSNumber*) width height: (NSNumber*) height
 - (void) toggleFullscreen;
 - (void) title: (NSString*) title;
 - (void) restore;
+
+- (BOOL) currentlyActive;
+
 @end
 
 @interface Window : NSObject <WindowExports>
@@ -32,6 +35,7 @@ JSExportAs(resize, - (void) resize: (NSNumber*) width height: (NSNumber*) height
 - (Window*) initWithWindowController: (WindowController*)windowController andWebview: (WebView*) webView;
 - (CGFloat) getX;
 - (CGFloat) getY;
+- (BOOL) getActive;
 
 @end
 

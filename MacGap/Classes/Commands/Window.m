@@ -61,6 +61,11 @@
     return frame.origin.y;
 }
 
+- (BOOL) currentlyActive {
+    return self.windowController.window.isMainWindow;
+}
+
+
 - (void) open:(NSString *)url
 {
     WindowController* newWindow = [[WindowController alloc] initWithURL: url];
