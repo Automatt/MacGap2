@@ -61,7 +61,7 @@
     return frame.origin.y;
 }
 
-- (BOOL) currentlyActive {
+- (BOOL) active {
     return self.windowController.window.isMainWindow;
 }
 

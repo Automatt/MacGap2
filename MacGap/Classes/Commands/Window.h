@@ -26,7 +26,7 @@ JSExportAs(resize, - (void) resize: (NSNumber*) width height: (NSNumber*) height
 - (void) title: (NSString*) title;
 - (void) restore;
 
-- (BOOL) currentlyActive;
+- (BOOL) active;
 
 @end
 
@@ -35,7 +35,6 @@ JSExportAs(resize, - (void) resize: (NSNumber*) width height: (NSNumber*) height
 - (Window*) initWithWindowController: (WindowController*)windowController andWebview: (WebView*) webView;
 - (CGFloat) getX;
 - (CGFloat) getY;
-- (BOOL) getActive;
 
 @end
 
