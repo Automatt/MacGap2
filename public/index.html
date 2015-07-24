@@ -10,16 +10,16 @@
       width: 100%;
       background: #FFF;
       padding: 0;
-      margin: 0;
+      margin: 20;
       overflow: hidden;
       -webkit-user-select: none;
+      font-family: helvetica;
     }
 
     h1 {
       color: #E0E0E0;
       margin: 18% 0;
       text-align: center;
-      font-family: helvetica;
     }
   </style>
   
@@ -27,8 +27,19 @@
 <body>
   
   <script type="text/javascript" charset="utf-8">
+      
+      function test(){
+          var test = MacGap.Window.active();
+          document.getElementById("demo").innerHTML = "MacGap.Window.active(): " + test;
+      }
+
+  
+    setInterval(test, 500);
+  
  </script>
   
   <h1>MacGap</h1>
+  <p id="demo"></p>
+  
 </body>
 </html>
