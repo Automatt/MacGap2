@@ -18,7 +18,6 @@
 #import "Dialog.h"
 #import "Dock.h"
 #import "Task.h"
-#import "Notify.h"
 #import "Fonts.h"
 #import "StatusItem.h"
 #import "Event.h"

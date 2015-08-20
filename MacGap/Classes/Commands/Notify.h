@@ -7,6 +7,8 @@
 //
 
 #import "Command.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+
 @protocol NotifyExports <JSExport>
 
 - (void) notify:(NSDictionary*)aNotification;

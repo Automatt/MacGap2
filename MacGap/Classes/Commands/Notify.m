@@ -7,6 +7,7 @@
 //
 
 #import "Notify.h"
+
 @interface Notify ()
 @property (readwrite) NSMutableArray* notifications;
 @end
@@ -16,6 +17,7 @@
 - (void) notify:(NSDictionary*)aNotification {
     NSString* type = [aNotification valueForKey:@"type"];
     NSString* uid = [aNotification valueForKey:@"id"];
+    JSValue* callback = [aNotification valueForKey:@"callback"];
     
     if([type isEqualToString:@"sheet"]) {
         NSAlert *alert = [[NSAlert alloc] init];
@@ -46,7 +48,7 @@
         }
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
        
-        [self.notifications addObject:@{ @"id" : uid, @"title" : [aNotification valueForKey: @"title"], @"sentOn" :[NSDate date] }];
+        [self.notifications addObject:@{ @"id" : uid, @"title" : [aNotification valueForKey: @"title"], @"sentOn" :[NSDate date], @"callback" : callback }];
 
     }
     
