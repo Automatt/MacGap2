@@ -27,7 +27,6 @@
 		22B1CF361937734B00D2C294 /* Fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF0E1937734B00D2C294 /* Fonts.m */; };
 		22B1CF371937734B00D2C294 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF111937734B00D2C294 /* Menu.m */; };
 		22B1CF381937734B00D2C294 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF131937734B00D2C294 /* MenuItem.m */; };
-		22B1CF391937734B00D2C294 /* Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF151937734B00D2C294 /* Notify.m */; };
 		22B1CF3A1937734B00D2C294 /* StatusItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF171937734B00D2C294 /* StatusItem.m */; };
 		22B1CF3B1937734B00D2C294 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF191937734B00D2C294 /* Task.m */; };
 		22B1CF3C1937734B00D2C294 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1CF1B1937734B00D2C294 /* Window.m */; };
@@ -83,8 +82,6 @@
 		22B1CF111937734B00D2C294 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		22B1CF121937734B00D2C294 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
 		22B1CF131937734B00D2C294 /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
-		22B1CF141937734B00D2C294 /* Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notify.h; sourceTree = "<group>"; };
-		22B1CF151937734B00D2C294 /* Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notify.m; sourceTree = "<group>"; };
 		22B1CF161937734B00D2C294 /* StatusItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItem.h; sourceTree = "<group>"; };
 		22B1CF171937734B00D2C294 /* StatusItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItem.m; sourceTree = "<group>"; };
 		22B1CF181937734B00D2C294 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -223,8 +220,6 @@
 				22B1CF111937734B00D2C294 /* Menu.m */,
 				22B1CF121937734B00D2C294 /* MenuItem.h */,
 				22B1CF131937734B00D2C294 /* MenuItem.m */,
-				22B1CF141937734B00D2C294 /* Notify.h */,
-				22B1CF151937734B00D2C294 /* Notify.m */,
 				22B1CF161937734B00D2C294 /* StatusItem.h */,
 				22B1CF171937734B00D2C294 /* StatusItem.m */,
 				22B1CF181937734B00D2C294 /* Task.h */,
@@ -352,7 +347,6 @@
 				22B1CF331937734B00D2C294 /* Dialog.m in Sources */,
 				22B1CF361937734B00D2C294 /* Fonts.m in Sources */,
 				22B1CF2B1937734B00D2C294 /* AppDelegate.m in Sources */,
-				22B1CF391937734B00D2C294 /* Notify.m in Sources */,
 				22B1CF351937734B00D2C294 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
