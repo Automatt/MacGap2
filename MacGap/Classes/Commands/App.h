@@ -17,7 +17,7 @@
 - (void) unhide;
 - (void) beep;
 - (void) bounce;
-- (void) notify:(NSDictionary*)aNotification;
+- (void) notify:(JSValue*)aNotification;
 - (void) closeNotification:(NSString*)notificationId;
 
 JSExportAs(setUserAgent, - (void) setCustomUserAgent:(NSString *)userAgentString);
@@ -38,4 +38,5 @@ JSExportAs(setUserAgent, - (void) setCustomUserAgent:(NSString *)userAgentString
 
 - (id) initWithWebView:(WebView *)view;
 - (void) addFiles: (NSArray*) files;
+- (void) notificationActivated: (NSUserNotification*) notification;
 @end

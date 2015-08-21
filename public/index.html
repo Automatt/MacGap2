@@ -23,6 +23,13 @@
     }
   </style>
   
+  <script type="text/javascript">
+      function TestNotify(){
+          MacGap.notify({type:'nonsheet', title:'MacGap Test Notify', subtitle:'', content:'Some notify content',
+                        callback:function(){ alert("Callback\nYou clicked on a notification");}, sound:true})
+      }
+  </script>
+  
 </head>
 <body>
   
@@ -32,14 +39,15 @@
           var test = MacGap.Window.active();
           document.getElementById("demo").innerHTML = "MacGap.Window.active(): " + test;
       }
-
   
+
     setInterval(test, 500);
   
  </script>
   
   <h1>MacGap</h1>
   <p id="demo"></p>
+  <p id="notify"><a href="javascript:TestNotify();">Test Notification Callback</a>
   
 </body>
 </html>

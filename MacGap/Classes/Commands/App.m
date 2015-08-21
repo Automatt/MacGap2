@@ -113,12 +113,24 @@
                                        forKey:@"bundleURL"];
         
         [Event triggerEvent:@"appActivated" withArgs:applicationDidGetFocusDict forWebView:self.webView];
+        
+        
     }
 }
 
-- (void) notify:(NSDictionary*)aNotification {
-    NSString* type = [aNotification valueForKey:@"type"];
-    NSString* uid = [aNotification valueForKey:@"id"];
+- (void) notify:(JSValue*) aNotification {
+    
+    JSValue* jType = [aNotification valueForProperty:@"type"];
+    JSValue* jUid = [aNotification valueForProperty:@"id"];
+    JSValue* jSubtitle = [aNotification valueForProperty:@"subtitle"];
+    JSValue* jTitle = [aNotification valueForProperty: @"title"];
+    
+    JSValue* callback = [aNotification valueForProperty:@"callback"];
+    
+    NSString* type = [jType toString];
+    NSString* uid = [jUid toString];
+    NSString* subtitle = [jSubtitle toString];
+    NSString* title = [jTitle toString];
 
     if([type isEqualToString:@"sheet"]) {
         NSAlert *alert = [[NSAlert alloc] init];
@@ -138,17 +150,17 @@
             
         }
         
-        [notification setTitle:[aNotification valueForKey:@"title"]];
-        [notification setInformativeText:[aNotification valueForKey:@"content"]];
-        [notification setSubtitle:[aNotification valueForKey:@"subtitle"]];
+        [notification setTitle:[[aNotification valueForProperty:@"title"] toString]];
+        [notification setInformativeText:[[aNotification valueForProperty:@"content"] toString]];
+        [notification setSubtitle: subtitle];
         [notification setUserInfo:@{ @"id" : uid }];
         
-        if([[aNotification valueForKey:@"sound"] boolValue] == YES || ![aNotification valueForKey:@"sound"] ) {
+        if([[aNotification valueForProperty:@"sound"] toBool] == YES || ![[aNotification valueForProperty:@"sound"] toBool]) {
             [notification setSoundName: NSUserNotificationDefaultSoundName];
         }
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
         
-        [self.notifications addObject:@{ @"id" : uid, @"title" : [aNotification valueForKey: @"title"], @"sentOn" :[NSDate date] }];
+        [self.notifications addObject:@{ @"id" : uid, @"title" : title, @"sentOn" :[NSDate date], @"callback" :callback }];
         
     }
 }
@@ -162,11 +174,34 @@
              NSUInteger noteIdx = [self.notifications indexOfObjectPassingTest: ^BOOL(NSDictionary* obj, NSUInteger idx, BOOL *stop) {
                                         return [[obj valueForKey:@"id"] isEqualToString:notificationId];
                                   }];
+            
             if (noteIdx != NSNotFound)
                 [self.notifications removeObjectAtIndex:noteIdx];
         }
     }
 }
+
+- (void) notificationActivated: (NSUserNotification*)notification {
+    
+    //NSLog(@"Notification - Caught");
+    
+    NSString* uid = [notification.userInfo valueForKey:@"id"];
+    NSUInteger noteIdx = [self.notifications indexOfObjectPassingTest: ^BOOL(NSDictionary* obj, NSUInteger idx, BOOL *stop) {
+        if ( [[obj valueForKey:@"id"] isEqualToString:uid]) {
+            JSValue* callback = [obj valueForKey:@"callback"];
+            [callback callWithArguments:@[]];
+            return true;
+        } else {
+            return false;
+        }
+        
+    if (noteIdx != NSNotFound)
+        [self.notifications removeObjectAtIndex:noteIdx];
+    }];
+    
+
+}
+
 
 /*
  To get the elapsed time since the previous input event—keyboard, mouse, or tablet—specify kCGAnyInputEventType.

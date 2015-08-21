@@ -36,4 +36,15 @@
 {
     return YES;
 }
+
+- (void) userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification
+{
+    
+    // NSLog(@"Notification - Clicked");
+    
+    [self.windowController.webViewDelegate.app notificationActivated :notification];
+}
+
+
+
 @end
