@@ -1,53 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MacGap</title>
+  <title>Jarvis</title>
   
-
-  <style type="text/css" media="screen">
-    html, body {
-      height: 100%;
-      width: 100%;
-      background: #FFF;
-      padding: 0;
-      margin: 20;
-      overflow: hidden;
-      -webkit-user-select: none;
-      font-family: helvetica;
-    }
-
-    h1 {
-      color: #E0E0E0;
-      margin: 18% 0;
-      text-align: center;
-    }
   </style>
   
   <script type="text/javascript">
-      function TestNotify(){
-          MacGap.notify({type:'nonsheet', title:'MacGap Test Notify', subtitle:'', content:'Some notify content',
-                        callback:function(){ alert("Callback\nYou clicked on a notification");}, sound:true})
-      }
+      window.location.href = 'http://ec2-52-10-36-180.us-west-2.compute.amazonaws.com/' // Jarvis Prod
   </script>
   
 </head>
 <body>
-  
-  <script type="text/javascript" charset="utf-8">
-      
-      function test(){
-          var test = MacGap.Window.active();
-          document.getElementById("demo").innerHTML = "MacGap.Window.active(): " + test;
-      }
-  
-
-    setInterval(test, 500);
-  
- </script>
-  
-  <h1>MacGap</h1>
-  <p id="demo"></p>
-  <p id="notify"><a href="javascript:TestNotify();">Test Notification Callback</a>
-  
-</body>
+  </body>
 </html>
