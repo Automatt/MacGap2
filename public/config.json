@@ -15,14 +15,12 @@
                 "File" : "File"
                  },
     "window" : {
-        "title" : "MacGap",
-        "width" : 900,
-        "height" : 600,
+        "title" : "Jarvis",
+        "width" : 1000,
+        "height" : 800,
         "position": "center",
-        "min_width": 400,
-        "min_height": 200,
-        "max_width": 1200,
-        "max_height": 800,
+        "min_width": 930,
+        "min_height": 775,
         "opaque": 1,
         "alpha": 1
     }
